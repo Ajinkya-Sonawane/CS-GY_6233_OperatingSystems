@@ -3,7 +3,7 @@
 
 ## Members: 
 1. [Ajinkya Sonawane](https://github.com/Ajinkya-Sonawane)
-1. [Roshni Sen]()
+1. [Roshni Sen](https://github.com/rs7633)
 
 ## How to run
 To compile all 6 parts and the fast.c file Run : `sh build.sh`
