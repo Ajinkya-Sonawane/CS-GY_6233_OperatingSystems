@@ -1,5 +1,5 @@
 # CS-GY_6233_OperatingSystems
-CS-GY 6233 Operating Systems Final Project
+[CS-GY 6233 Operating Systems Final Project](https://kyall.notion.site/kyall/CS-GY-6233-Final-Project-f47fb948159e425da6a22ddfd318bb17)
 
 ## Members: 
 1. [Ajinkya Sonawane](https://github.com/Ajinkya-Sonawane)
