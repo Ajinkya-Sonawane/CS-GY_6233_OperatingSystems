@@ -40,5 +40,5 @@ To compile all 6 parts and the fast.c file Run : `sh build.sh`
 ### Fast.c (How to execute)
 `./fast FILE_NAME`
 
-![image](https://user-images.githubusercontent.com/21151348/145730826-8d4fafa6-68b3-45f2-8bb5-b6ca53052f59.png)
+![image](https://user-images.githubusercontent.com/21151348/145731492-3c3aa321-39a8-4fea-bf9a-7fd91050bdd6.png)
 
