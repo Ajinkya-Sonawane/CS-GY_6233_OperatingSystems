@@ -77,6 +77,13 @@ void read_from_disk_with_threads(char *FILENNAME, int BLOCK_SIZE, int NUM_OF_THR
     printf("\nWith multi-threading \nBlock Size\t\t: %d\nNumber of threads\t: %d\nxor\t\t\t: %08x\n",BLOCK_SIZE,NUM_OF_THREADS, xor);
 }
 
+off_t get_file_size(char *filename){
+    off_t filesize = 0;
+    int fd = open(filename,O_RDONLY);
+    filesize = lseek(fd,0,SEEK_END);
+    return filesize;
+}
+
 int main(int argc, char *argv[]) {
 
     char *FILENAME;
@@ -92,9 +99,10 @@ int main(int argc, char *argv[]) {
     //Chose the following by through trials
     BLOCK_SIZE = 524288;
     NUM_OF_THREADS = 3;
+    off_t FILESIZE = get_file_size(FILENAME);
     start = clock();
     read_from_disk_with_threads(FILENAME, BLOCK_SIZE, NUM_OF_THREADS);
     end = clock();
     wall_time = (double)(end - start)/CLOCKS_PER_SEC;
-    printf("Wall Time\t\t: %f\n",wall_time);
+    printf("Wall Time (seconds)\t: %f\nSpeed (MiB/s)\t\t: %f\nSpeed (B/s)\t\t: %f\n",wall_time,FILESIZE/(wall_time*1024*1024),FILESIZE/wall_time);
 }
