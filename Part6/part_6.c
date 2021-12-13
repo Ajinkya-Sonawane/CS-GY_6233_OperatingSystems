@@ -11,7 +11,7 @@
 #include <fcntl.h>
 
 #define MAX_BLOCK_SIZE 600000
-#define PART_6_FILENAME "PART_6.csv"
+#define PART_6_FILENAME "Part6/PART_6.csv"
 
 typedef struct {
     int FD;

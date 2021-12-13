@@ -8,7 +8,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#define PART_3_FILENAME  "PART_3.csv"
+#define PART_3_FILENAME  "Part3/PART_3.csv"
 #define MAX_BLOCK_SIZE 550000
 
 void add_record_to_csv(char *record){
