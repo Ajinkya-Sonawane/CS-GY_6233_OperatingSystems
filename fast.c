@@ -8,7 +8,7 @@
 #include<time.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fcntl.h>
+
 
 
 typedef struct {
@@ -77,6 +77,24 @@ void read_from_disk_with_threads(char *FILENNAME, int BLOCK_SIZE, int NUM_OF_THR
     printf("\nWith multi-threading \nBlock Size\t\t: %d\nNumber of threads\t: %d\nxor\t\t\t: %08x\n",BLOCK_SIZE,NUM_OF_THREADS, xor);
 }
 
+void read_from_disk_without_threads(char *FILENAME,int BLOCK_SIZE){
+
+    int size = ceil(BLOCK_SIZE/(long)sizeof(unsigned int));
+    unsigned int buf[size];
+    unsigned int xor = 0;
+    int bytes_read;
+
+    int fd = open(FILENAME, O_RDONLY);
+    unsigned int read_size;
+    while ((bytes_read=read(fd, buf, BLOCK_SIZE)) > 0) {
+        read_size = ceil(bytes_read/sizeof(unsigned int));
+        xor ^= xorbuf(buf, read_size);
+    }
+    printf("\nWithout multi-threading \nBlock Size\t\t: %d\nxor\t\t\t: %08x\n",BLOCK_SIZE, xor);
+    close(fd);
+}
+
+
 off_t get_file_size(char *filename){
     off_t filesize = 0;
     int fd = open(filename,O_RDONLY);
@@ -98,11 +116,19 @@ int main(int argc, char *argv[]) {
 
     //Chose the following by through trials
     BLOCK_SIZE = 524288;
-    NUM_OF_THREADS = 3;
     off_t FILESIZE = get_file_size(FILENAME);
+    
     start = clock();
-    read_from_disk_with_threads(FILENAME, BLOCK_SIZE, NUM_OF_THREADS);
+    read_from_disk_without_threads(FILENAME,BLOCK_SIZE);
     end = clock();
     wall_time = (double)(end - start)/CLOCKS_PER_SEC;
     printf("Wall Time (seconds)\t: %f\nSpeed (MiB/s)\t\t: %f\nSpeed (B/s)\t\t: %f\n",wall_time,FILESIZE/(wall_time*1024*1024),FILESIZE/wall_time);
+
+    // TODO: To run fast.c with threads kindly uncomment the following code
+    // NUM_OF_THREADS = 2;
+    // start = clock();
+    // read_from_disk_with_threads(FILENAME, BLOCK_SIZE, NUM_OF_THREADS);
+    // end = clock();
+    // wall_time = (double)(end - start)/CLOCKS_PER_SEC;
+    // printf("Wall Time (seconds)\t: %f\nSpeed (MiB/s)\t\t: %f\nSpeed (B/s)\t\t: %f\n",wall_time,FILESIZE/(wall_time*1024*1024),FILESIZE/wall_time);
 }

@@ -3,7 +3,11 @@
 #include <string.h>
 #include <fcntl.h> 
 #include <unistd.h>
+#include <pthread.h>
 #include <math.h>
+#include<time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 void howto() {
     printf("\rusage: ./os_project <FILENAME> [-r|-w] <BLOCK_SIZE> <BLOCK_COUNT>");
@@ -37,16 +41,13 @@ void read_from_disk(char *FILENAME,int BLOCK_SIZE, int BLOCK_COUNT){
 }
 
 void write_to_disk(char *FILENAME, int BLOCK_SIZE, int BLOCK_COUNT){
+
     int fd = open(FILENAME, O_WRONLY | O_CREAT, 777);
     char buf[BLOCK_SIZE];
     char value = 'a';
 
     for(int i=0; i<BLOCK_COUNT;i++)
     {
-        for(int j=0; j<BLOCK_SIZE; j++)
-        {
-            buf[j]= 'A' + (random() % 26);
-        }
         write(fd, buf, BLOCK_SIZE);
     }
     printf("File of size : %ld bytes created\n", (long)BLOCK_COUNT*BLOCK_SIZE);
@@ -56,8 +57,8 @@ void write_to_disk(char *FILENAME, int BLOCK_SIZE, int BLOCK_COUNT){
 int main(int argc, char *argv[]) {
     char *FILENAME;
     char mode;
-    int BLOCK_SIZE;
-    int BLOCK_COUNT;
+    unsigned int BLOCK_SIZE;
+    unsigned int BLOCK_COUNT;
 
     FILENAME = argv[1];
 
@@ -74,6 +75,8 @@ int main(int argc, char *argv[]) {
     BLOCK_SIZE = atoi(argv[3]);
     BLOCK_COUNT = atoi(argv[4]);
 
+    clock_t start=0,end=0;
+    start = clock();
     if (mode == 'r' || mode == 'R') {
         read_from_disk(FILENAME,BLOCK_SIZE,BLOCK_COUNT);
     }
@@ -81,7 +84,9 @@ int main(int argc, char *argv[]) {
 
         write_to_disk(FILENAME,BLOCK_SIZE,BLOCK_COUNT);
     }
-    
+    end=clock();
+    double wall_time = (double)(end - start)/CLOCKS_PER_SEC;
+    printf("File Size\t: %u\nTime taken\t: %f\n",BLOCK_SIZE*BLOCK_COUNT, wall_time);
 }
 
 

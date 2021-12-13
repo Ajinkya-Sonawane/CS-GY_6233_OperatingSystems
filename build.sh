@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-gcc Part1/part_1.c -o run
+gcc -O3 Part1/part_1.c -o run
 gcc Part2/part_2.c -o run2
 gcc Part3/part_3.c -o run3
 gcc Part4/part_4.c -o run4
