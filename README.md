@@ -41,7 +41,10 @@ To compile all 6 parts and the fast.c file Run : `sh build.sh`
 
 ![image](https://user-images.githubusercontent.com/21151348/145730721-3b938077-7dbe-4ea8-a920-15565f09dea6.png)
 (Partial O/P)
-![image](https://github.com/Ajinkya-Sonawane/CS-GY_6233_OperatingSystems/blob/main/Part6/part_6_diff_bnt.png)
+
+![part_6_diff_bnt](https://user-images.githubusercontent.com/21151348/145907288-66f8e65f-5636-413b-b850-89b49df86439.png)
+
+<b>X-axis:</b> Number of Threads | <b>Y-axis:</b> Wall Time (seconds) | <b>Lines :</b> Block Size
 
 ### Fast.c (How to execute)
 `./fast FILE_NAME`
