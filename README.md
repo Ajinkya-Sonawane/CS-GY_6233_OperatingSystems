@@ -23,21 +23,25 @@ To compile all 6 parts and the fast.c file Run : `sh build.sh`
 `./run3 FILE_NAME`
 
 ![image](https://user-images.githubusercontent.com/21151348/145730646-f40fc4ce-148b-46fb-92ee-064f12e603db.png)
-
+![image](https://github.com/Ajinkya-Sonawane/CS-GY_6233_OperatingSystems/blob/main/Part3/part_3.png)
 
 ### Part 4 (How to execute):
 `./run4 FILE_NAME BLOCK_SIZE`
+
+![image](https://github.com/Ajinkya-Sonawane/CS-GY_6233_OperatingSystems/blob/main/Part4/part_4.png)
 
 ### Part 5 (How to execute):
 `./run5 FILE_NAME`
 
 [READ vs LSEEK comparison](https://vast-baseball-750.notion.site/5178bbed585c4fb88bceffbd9f664c27?v=f527ddc7e8ab40a0ac918daba37c8551)
+![image](https://github.com/Ajinkya-Sonawane/CS-GY_6233_OperatingSystems/blob/main/Part5/part_5.png)
 
 ### Part 6 (How to execute):
 `./run6 FILE_NAME`
 
 ![image](https://user-images.githubusercontent.com/21151348/145730721-3b938077-7dbe-4ea8-a920-15565f09dea6.png)
 (Partial O/P)
+![image](https://github.com/Ajinkya-Sonawane/CS-GY_6233_OperatingSystems/blob/main/Part6/part_6_diff_bnt.png)
 
 ### Fast.c (How to execute)
 `./fast FILE_NAME`
