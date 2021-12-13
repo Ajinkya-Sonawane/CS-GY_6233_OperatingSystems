@@ -1,0 +1,9 @@
+Type,Block Size, Wall Time
+Non-Cached,1024,1.105007
+Non-Cached,4096,0.412549
+Cached,8192,0.286992
+Cached,65536,0.203326
+Cached,1024,0.930197
+Cached,4096,0.373533
+Non-Cached,8192,0.446866
+Non-Cached,65536,0.424510
