@@ -84,6 +84,11 @@ int main(int argc, char *argv[]) {
 
         write_to_disk(FILENAME,BLOCK_SIZE,BLOCK_COUNT);
     }
+
+    // For comparing performance with dd command
+    // write_to_disk(FILENAME,BLOCK_SIZE,BLOCK_COUNT);
+    // read_from_disk(FILENAME,BLOCK_SIZE,BLOCK_COUNT);
+
     end=clock();
     double wall_time = (double)(end - start)/CLOCKS_PER_SEC;
     printf("File Size\t: %u\nTime taken\t: %f\n",BLOCK_SIZE*BLOCK_COUNT, wall_time);
