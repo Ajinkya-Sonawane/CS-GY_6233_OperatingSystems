@@ -31,6 +31,8 @@ To compile all 6 parts and the fast.c file Run : `sh build.sh`
 ### Part 5 (How to execute):
 `./run5 FILE_NAME`
 
+[READ vs LSEEK comparison](https://vast-baseball-750.notion.site/5178bbed585c4fb88bceffbd9f664c27?v=f527ddc7e8ab40a0ac918daba37c8551)
+
 ### Part 6 (How to execute):
 `./run6 FILE_NAME`
 
