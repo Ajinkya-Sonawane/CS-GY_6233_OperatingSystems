@@ -6,4 +6,4 @@ gcc Part3/part_3.c -o run3
 gcc Part4/part_4.c -o run4
 gcc Part5/part_5.c -o run5
 gcc Part6/part_6.c -o run6
-gcc fast.c -o fast
+gcc -O3 fast.c -o fast
