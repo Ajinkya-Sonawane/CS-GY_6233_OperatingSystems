@@ -127,7 +127,7 @@ int main(int argc, char *argv[]) {
     BLOCK_SIZE = 524288;
     NUM_OF_THREADS = 3;
     init_csv_file();
-    for(long BLOCK_SIZE=1024;BLOCK_SIZE < MAX_BLOCK_SIZE;BLOCK_SIZE*=2){
+    for(long BLOCK_SIZE=8192;BLOCK_SIZE < MAX_BLOCK_SIZE;BLOCK_SIZE*=2){
         for(int NUM_OF_THREADS = 1; NUM_OF_THREADS <= 10; NUM_OF_THREADS+=1){
             //Calculate read and XOR time using threads
             start = clock();
