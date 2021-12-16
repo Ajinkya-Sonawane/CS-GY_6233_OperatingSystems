@@ -33,7 +33,7 @@ void add_record_to_csv(char *record){
 void init_csv_file(){
     FILE *fptr;
     fptr = fopen(PART_6_FILENAME,"w");
-    fprintf(fptr,"Block Size,Number of Threads,Wall Time");
+    fprintf(fptr,"Block Size,Number of Threads,Wall Time, Speed");
     fclose(fptr);
 }
 
@@ -111,6 +111,14 @@ void read_from_disk_without_threads(char *FILENAME,int BLOCK_SIZE){
     close(fd);
 }
 
+unsigned int get_file_size_bytes(char *filename){
+    unsigned int file_size_bytes = 0;
+    int fd = open(filename,O_RDONLY);
+    file_size_bytes = lseek(fd,0,SEEK_END);
+    close(fd);
+    return file_size_bytes;
+}
+
 int main(int argc, char *argv[]) {
 
     char *FILENAME;
@@ -126,6 +134,7 @@ int main(int argc, char *argv[]) {
     //Chose the following by through trials
     BLOCK_SIZE = 524288;
     NUM_OF_THREADS = 3;
+    unsigned int FILZESIZE = get_file_size_bytes(FILENAME);
     init_csv_file();
     for(long BLOCK_SIZE=8192;BLOCK_SIZE < MAX_BLOCK_SIZE;BLOCK_SIZE*=2){
         for(int NUM_OF_THREADS = 1; NUM_OF_THREADS <= 10; NUM_OF_THREADS+=1){
@@ -135,7 +144,7 @@ int main(int argc, char *argv[]) {
             end = clock();
             wall_time = (double)(end - start)/CLOCKS_PER_SEC;
             record = (char*)malloc(100 * sizeof(char));
-            sprintf(record, "\n%ld,%d,%f", BLOCK_SIZE, NUM_OF_THREADS,wall_time);
+            sprintf(record, "\n%ld,%d,%f,%f", BLOCK_SIZE, NUM_OF_THREADS,wall_time,FILZESIZE/(wall_time*1024*1024));
 
             add_record_to_csv(record);            
             printf("Wall Time\t\t: %f\n",wall_time);
