@@ -29,14 +29,15 @@ To compile all 6 parts and the fast.c file Run : `sh build.sh`
 #### How to execute: `./run3 FILE_NAME`
 
 ![image](https://user-images.githubusercontent.com/21151348/145730646-f40fc4ce-148b-46fb-92ee-064f12e603db.png)
-![image](https://github.com/Ajinkya-Sonawane/CS-GY_6233_OperatingSystems/blob/main/Part3/part_3.png)
+![part_3_bvp](https://user-images.githubusercontent.com/21151348/146445336-3114b61d-7631-4a80-9e9d-ff5f0ed6d19d.png)
 
 ### Part 4 
 - Compare program with cached and non-cached data
 
 #### How to execute: `./run4 FILE_NAME BLOCK_SIZE`
 
-![image](https://github.com/Ajinkya-Sonawane/CS-GY_6233_OperatingSystems/blob/main/Part4/part_4.png)
+![part_4_bvp](https://user-images.githubusercontent.com/21151348/146445375-d14b231b-3891-4ff7-9b9b-ddc3c1444955.png)
+
 
 ### Part 5 
 - Compare System calls for Block Size of 1 Byte, which will give number of system calls per second
@@ -44,7 +45,8 @@ To compile all 6 parts and the fast.c file Run : `sh build.sh`
 #### How to execute: `./run5 FILE_NAME`
 
 [READ vs LSEEK comparison](https://vast-baseball-750.notion.site/5178bbed585c4fb88bceffbd9f664c27?v=f527ddc7e8ab40a0ac918daba37c8551)
-![image](https://github.com/Ajinkya-Sonawane/CS-GY_6233_OperatingSystems/blob/main/Part5/part_5.png)
+![part_5_bvt](https://user-images.githubusercontent.com/21151348/146445517-cb1035bb-ba76-4826-a440-110ad07e3906.png)
+
 
 ### Part 6 
 - Compare program performance with different block sizes and threads
@@ -54,7 +56,7 @@ To compile all 6 parts and the fast.c file Run : `sh build.sh`
 ![image](https://user-images.githubusercontent.com/21151348/145730721-3b938077-7dbe-4ea8-a920-15565f09dea6.png)
 (Partial O/P)
 
-![part_6_diff_bnt](https://user-images.githubusercontent.com/21151348/145907288-66f8e65f-5636-413b-b850-89b49df86439.png)
+![part_6_bvpvt](https://user-images.githubusercontent.com/21151348/146445435-06a160e5-fb80-4a6a-84a6-952978be57f9.png)
 
 <b>X-axis:</b> Number of Threads | <b>Y-axis:</b> Wall Time (seconds) | <b>Lines :</b> Block Size
 
