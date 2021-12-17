@@ -13,7 +13,8 @@ To compile all 6 parts and the fast.c file Run : `sh build.sh`
 
 #### How to execute : `./run FILE_NAME [-r | -w] BLOCK_SIZE BLOCK_COUNT`
 
-![image](https://user-images.githubusercontent.com/21151348/145730580-153243f0-2827-4283-bd87-0e90520eb718.png)
+![image](https://user-images.githubusercontent.com/21151348/146483654-a3635350-1d9e-4ddd-8a08-be3ae32079f3.png)
+
 
 ### Part 2 
 - Program to find a file size which can be read in "reasonable" time.
